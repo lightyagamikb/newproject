@@ -1,10 +1,71 @@
 <html>
 	<head>
 		<title>newproject</title>
+		<script  src='jquery.js'>		
+		</script>
+		<style>
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			h1{
+				text-align:center;
+				margin:5px;
+			}
+			#container{
+				width:1000px;
+				height: 500px;
+				border:1px solid;
+				margin:auto;
+				overflow:hidden;
+
+			}
+			.box{
+				width:100px;
+				height: 100px;
+				border:1px solid;
+				margin:5px;
+				padding:5px;
+				display:inline-block;
+
+			}
+			.box_name{
+				margin:auto;			 
+				text-align: center;
+
+			}
+		</style>
 	</head>
 	 <body>
 	 	<h1>new project with git</h1>
-	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis atque et doloremque error quam quo, corrupti, harum tempore expedita itaque veritatis illum sunt, optio ducimus saepe accusamus quis mollitia assumenda.</p>
-	 	 
+	
+		 <div id='container'>
+			<!-- <div class='box' style="background-color:red;">
+			  	<div class='box_name'>box</div>
+			  </div> --> 
+		</div>  
+
+		<script>	
+			var count = 0;	
+
+			setInterval(function(){			 
+
+			var r = (Math.floor(Math.random() * 256));
+			var g = (Math.floor(Math.random() * 256));
+			var b = (Math.floor(Math.random() * 256));	
+
+			var newdiv= $("<div></div>").attr("class","box").attr("style","background-color:rgb(" + r +"," + g +"," + b +")");
+			$("#container").append(newdiv);
+			count++;
+
+			if(count===32){				
+				newdiv.siblings().remove();
+				count=0;
+			}
+
+			},500);			 
+			
+		</script>
 	 </body>
+			
 </html>
